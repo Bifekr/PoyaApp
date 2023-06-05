@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">PoyaApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="educatioin_title">طرح کارآموزی، طرحی است که کاربران با تهیه دوره تحت نظر استاد آموزش میبینند و گام به کام رشد می کنند. در این مسیر تمرین هایی از هر بخش برای کاربر توسط استاد طرح خواهد شد تا میزان تسلط کاربر مشخص شود. در صورت اتمام دوره کاربر می تواند با استاد در انجام برخی پروژه ها همکاری کند</string>
+    <string name="contactus_message">با تشکر از همراهی شما کاربر عزیز، در صورت وجود هرگونه مشکل در استفاده از اپلیکیشن و یا روند پرسش و پاسخ برنامه میتوانید نظرات و پیشنهادات و سوالات خود را در اینستاگرام با ما مطرح کنید</string>
+    <string name="question_fani">در صورت استفاده از این گزینه باید حساب شما دارای اعتبار باشد، برای خرید اعتبار کلیک کنید</string>
+    <string name="rsa"></string>
+</resources>

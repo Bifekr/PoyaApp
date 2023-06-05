@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item android:id="@+id/homeFragment" android:title="خانه" android:icon="@drawable/ic_home_black_24dp"/>
+    <item android:id="@+id/cartFragment" android:title="کارت" android:icon="@drawable/ic_add_black_24dp"/>
+
+    <item android:id="@+id/profileFragment" android:title="پروفایل " android:icon="@drawable/ic_people_black_24dp"/>
+
+    <item android:id="@+id/questionFragment" android:title="سوالات" android:icon="@drawable/ic_question_black_24dp"/>
+<item android:id="@+id/codesFragment" android:title=" کدها " android:icon="@drawable/ic_code_black_24dp"/>
+</menu>
