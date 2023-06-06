@@ -6,11 +6,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+
 import android.widget.Toast
 import android.widget.Toast.LENGTH_SHORT
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import ir.minicartoon.poyaapp.R
+import ir.minicartoon.poyaapp.databinding.FragmentHomeBinding
 import ir.minicartoon.poyaapp.model.User
 
 // TODO: Rename parameter arguments, choose names that match
@@ -36,23 +40,41 @@ class HomeFragment : Fragment() {
         }
     }
 
-    private var myView: View? = null
-    private lateinit var viewModel: HomeViewModel
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
 
-        // Inflate the layout for this fragment
-        myView = inflater.inflate(R.layout.fragment_home, container, false)
+    private lateinit var viewModel: HomeViewModel
+    private lateinit var binding: FragmentHomeBinding;
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        //................inflate View and set ViewModel.............//
+        binding = FragmentHomeBinding.inflate(inflater, container, false)
         viewModel = ViewModelProvider(this)[HomeViewModel::class.java]
 
-        viewModel.getBestUser().observe(viewLifecycleOwner) {
-            Toast.makeText(context, it[0].name, LENGTH_SHORT).show()
-            
-        }
+        //..............Start Functions and Code..............................//
+        getBestUser()
 
-        return myView
+
+
+
+
+
+        return binding.root
+    }
+
+    private fun getBestUser() {
+
+        binding.rvHomeBestUsers.layoutManager = LinearLayoutManager(
+            context,
+            RecyclerView.HORIZONTAL, false
+        )
+
+        
+        viewModel.getBestUser().observe(viewLifecycleOwner) {
+
+            binding.rvHomeBestUsers.adapter = BestUserAdapter(it)
+        }
     }
 
     companion object {
@@ -74,4 +96,6 @@ class HomeFragment : Fragment() {
                 }
             }
     }
+
+
 }
