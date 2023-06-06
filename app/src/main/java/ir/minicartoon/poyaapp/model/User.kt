@@ -5,5 +5,6 @@ data class User(
     var name: String,
     var family: String,
     var image: String,
-    var profile: String
+    var profile: String,
+    var point: String
 )

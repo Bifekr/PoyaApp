@@ -71,9 +71,13 @@ class HomeFragment : Fragment() {
         )
 
         
-        viewModel.getBestUser().observe(viewLifecycleOwner) {
+        viewModel.getBestUser().observe(viewLifecycleOwner) { list ->
 
-            binding.rvHomeBestUsers.adapter = BestUserAdapter(it)
+            binding.rvHomeBestUsers.adapter = BestUserAdapter(list) {
+                Toast.makeText(this@HomeFragment.requireActivity(), "onClick: $it", LENGTH_SHORT)
+                    .show()
+                Log.i("tag", "onClick: $it")
+            }
         }
     }
 
