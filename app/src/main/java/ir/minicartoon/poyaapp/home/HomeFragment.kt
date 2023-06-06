@@ -1,11 +1,17 @@
 package ir.minicartoon.poyaapp.home
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import android.widget.Toast.LENGTH_SHORT
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import ir.minicartoon.poyaapp.R
+import ir.minicartoon.poyaapp.model.User
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -30,12 +36,23 @@ class HomeFragment : Fragment() {
         }
     }
 
+    private var myView: View? = null
+    private lateinit var viewModel: HomeViewModel
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        myView = inflater.inflate(R.layout.fragment_home, container, false)
+        viewModel = ViewModelProvider(this)[HomeViewModel::class.java]
+
+        viewModel.getBestUser().observe(viewLifecycleOwner) {
+            Toast.makeText(context, it[0].name, LENGTH_SHORT).show()
+            
+        }
+
+        return myView
     }
 
     companion object {

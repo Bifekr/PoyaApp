@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rel_bestUserItem_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    android:background="?attr/selectableItemBackground"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="4dp">
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/img_editProfile_image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/woman"
+        app:civ_border_color="@color/blueGreen"
+        app:civ_border_width="2dp"
+        app:civ_shadow="true"
+        app:civ_shadow_color="@color/white"
+        app:civ_shadow_radius="10dp" />
+
+
+    <TextView
+        android:id="@+id/txt_bestUserItem_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/img_editProfile_image"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="4dp"
+        android:layout_marginTop="8dp"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:textColor="@color/black"
+        tools:text="مجتبی نکوئی" />
+
+
+    <TextView
+        android:id="@+id/txt_bestUserItem_point"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_bestUserItem_name"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/shape_point"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:textColor="@color/white"
+        tools:text="120 رای مثبت" />
+
+
+</RelativeLayout>
