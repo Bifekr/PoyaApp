@@ -9,6 +9,7 @@ import android.view.ViewGroup
 
 import android.widget.Toast
 import android.widget.Toast.LENGTH_SHORT
+import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -54,6 +55,7 @@ class HomeFragment : Fragment() {
 
         //..............Start Functions and Code..............................//
         getBestUser()
+        getBestCourse()
 
 
 
@@ -63,17 +65,24 @@ class HomeFragment : Fragment() {
         return binding.root
     }
 
+    private fun getBestCourse() {
+        binding.rvHomeBestCourses.layoutManager =
+            LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
+        //get data from ViewModel
+        viewModel.getBestCourse().observe(viewLifecycleOwner) { list -> //set data to adapter
+            binding.rvHomeBestCourses.adapter = BestCourseAdapter(list)
+        }
+    }
+
     private fun getBestUser() {
 
-        binding.rvHomeBestUsers.layoutManager = LinearLayoutManager(
-            context,
-            RecyclerView.HORIZONTAL, false
-        )
+        binding.rvHomeBestUsers.layoutManager =
+            LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
 
-        
-        viewModel.getBestUser().observe(viewLifecycleOwner) { list ->
+        viewModel.getBestUser().observe(viewLifecycleOwner) { list -> //set data to adapter
 
-            binding.rvHomeBestUsers.adapter = BestUserAdapter(list) {
+            binding.rvHomeBestUsers.adapter = BestUserAdapter(list) { //get onclick value
+
                 Toast.makeText(this@HomeFragment.requireActivity(), "onClick: $it", LENGTH_SHORT)
                     .show()
                 Log.i("tag", "onClick: $it")

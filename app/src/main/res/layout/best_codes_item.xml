@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rel_bestCodeItem_parent"
+    android:layout_width="wrap_content"
+    android:paddingBottom="8dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    android:background="@drawable/shape_best_code_border"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:orientation="vertical"
+
+    app:cardCornerRadius="8dp">
+
+
+    <TextView
+        android:layout_centerHorizontal="true"
+        android:id="@+id/txt_bestCodesItem_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/normal"
+        android:gravity="center"
+        android:maxLines="2"
+        android:minLines="2"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        tools:text="مشکل در دریافت اطلاعات" />
+
+
+    <TextView
+        android:paddingRight="8dp"
+        android:paddingLeft="8dp"
+        android:id="@+id/txt_bestCodesItem_point"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_bestCodesItem_title"
+        android:background="@drawable/shape_point"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:textColor="@color/white"
+        tools:text="120 رای مثبت" />
+</RelativeLayout>
+
+
+

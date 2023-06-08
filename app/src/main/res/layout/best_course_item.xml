@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rel_bestCourseItem_parent"
+    android:layout_width="match_parent"
+    android:layout_height="160dp"
+    android:layout_marginLeft="4dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginRight="4dp"
+    android:layout_marginBottom="4dp"
+    android:background="@drawable/shape_best_course_item"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:orientation="vertical"
+    android:padding="4dp">
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/img_allCourseItem_image"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerHorizontal="true"
+        app:civ_border_color="@color/colorAccent"
+        app:civ_border_width="2dp"
+        app:civ_shadow_color="@color/colorAccent"
+        tools:src="@drawable/woman" />
+
+    <TextView
+        android:id="@+id/txt_bestCourse_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="16dp"
+        android:layout_toLeftOf="@id/img_allCourseItem_image"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        tools:text="دوره صفر تا صد اندروید" />
+
+
+    <TextView
+        android:id="@+id/txt_bestCourse_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_bestCourse_title"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_toLeftOf="@id/img_allCourseItem_image"
+        android:background="@drawable/shape_best_user_item"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        tools:text="230000 تومان" />
+
+
+    <TextView
+        android:id="@+id/txt_bestCourse_priority"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="4dp"
+        android:background="@drawable/shape_best_course_priority"
+        android:gravity="center"
+        android:minEms="1"
+
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp"
+        android:textColor="@color/colorAccent"
+        android:textSize="16sp"
+        tools:text="10" />
+
+    <TextView
+        android:id="@+id/txt_bestCourse_priorityTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@id/txt_bestCourse_priority"
+        android:paddingBottom="4dp"
+        android:text="اولویت زمانی برای دیدن این دوره : "
+        android:textColor="@color/black"
+        android:textSize="12sp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@id/txt_bestCourse_priorityTitle"
+        android:paddingBottom="4dp"
+        android:tint="@color/colorPrimary"
+        app:srcCompat="@drawable/ic_priority_high_black_24dp" />
+
+
+</RelativeLayout>
